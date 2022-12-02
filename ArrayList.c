@@ -148,6 +148,11 @@ void ArrayFree(ArrayList* list)
  */
 char* ArrayToString(ArrayList* list)
 {
+    if (list->count <= 0) {
+        printf("Error: Array is empty!\n");
+        return NULL;
+    }
+
     // Consider the size of the string for each integer is maximum 10 characters.
     char* str = malloc(sizeof(char) * list->count * 10);
     char* temp = malloc(sizeof(char) * 10);
