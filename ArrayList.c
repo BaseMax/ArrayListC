@@ -87,13 +87,15 @@ void ArrayDelete(ArrayList* list, int index)
         printf("Error: Array is empty!\n");
         return;
     }
-    else if (index >= list->count) {
+    else if (index >= list->count || index < 0) {
         printf("Error: Index out of range!\n");
         return;
     }
+
     for (int i = index; i < list->count; i++) {
         list->data[i] = list->data[i + 1];
     }
+
     list->count--;
 }
 
