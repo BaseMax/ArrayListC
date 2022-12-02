@@ -22,6 +22,8 @@ This is a simple implementation of an ArrayList in C using a struct, a pointer t
 
 - `void ArrayFree(ArrayList* list)`: Frees the memory
 
+- `char* ArrayToString(ArrayList* list)`: Returns a string representation of the array
+
 ## Usage
 
 ```c

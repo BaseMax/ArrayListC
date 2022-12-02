@@ -29,4 +29,6 @@ void ArrayPrint(ArrayList* list);
 
 void ArrayFree(ArrayList* list);
 
+char* ArrayToString(ArrayList* list);
+
 #endif

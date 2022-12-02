@@ -140,3 +140,18 @@ void ArrayFree(ArrayList* list)
     free(list);
 }
 
+
+/**
+ * @brief Convert the array list to a string.
+ * @param list Pointer to the array list.
+ * @return String of the array list.
+ */
+char* ArrayToString(ArrayList* list)
+{
+    // Consider the size of the string for each integer is maximum 10 characters.
+    char* str = malloc(sizeof(char) * list->count * 10);
+    for (int i = 0; i < list->count; i++) {
+        sprintf(str, "%s%d ", str, list->data[i]);
+    }
+    return str;
+}
