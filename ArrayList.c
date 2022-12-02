@@ -150,8 +150,14 @@ char* ArrayToString(ArrayList* list)
 {
     // Consider the size of the string for each integer is maximum 10 characters.
     char* str = malloc(sizeof(char) * list->count * 10);
+    char* temp = malloc(sizeof(char) * 10);
+
     for (int i = 0; i < list->count; i++) {
-        sprintf(str, "%s%d ", str, list->data[i]);
+        sprintf(temp, "%d", list->data[i]);
+        strcat(str, temp);
+        strcat(str, " ");
     }
+
+    free(temp);
     return str;
 }
