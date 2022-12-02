@@ -8,9 +8,9 @@
 #include "ArrayList.h"
 
 /**
- * @brief Create an array list with maximum `n` value capility
- * @arguments: `n`
- * 
+ * @brief Create an array list with maximum `n` value capacity.
+ * @param n Maximum capacity of the array list.
+ * @return Pointer to the array list.
  */
 ArrayList* ArrayCreate(int n)
 {
@@ -20,6 +20,11 @@ ArrayList* ArrayCreate(int n)
     return list;
 }
 
+/**
+ * @brief Append a value to the first of the array list.
+ * @param list Pointer to the array list.
+ * @param value Value to append.
+ */
 void ArrayAppendFirst(ArrayList* list, int value)
 {
     if(list->count == list->size) {
@@ -33,6 +38,11 @@ void ArrayAppendFirst(ArrayList* list, int value)
     list->count++;
 }
 
+/**
+ * @brief Append a value to the last of the array list.
+ * @param list Pointer to the array list.
+ * @param value Value to append.
+ */
 void ArrayAppendLast(ArrayList* list, int value)
 {
     if (list->count == list->size) {
@@ -43,6 +53,12 @@ void ArrayAppendLast(ArrayList* list, int value)
     list->count++;
 }
 
+/**
+ * @brief Append a value to the array list at the specified index.
+ * @param list Pointer to the array list.
+ * @param value Value to append.
+ * @param index Index to append the value.
+ */
 void ArrayAppend(ArrayList* list, int value, int index)
 {
     if (list->count == list->size) {
@@ -60,6 +76,11 @@ void ArrayAppend(ArrayList* list, int value, int index)
     list->count++;
 }
 
+/**
+ * @brief Delete a value from the array list at the specified index.
+ * @param list Pointer to the array list.
+ * @param index Index to delete the value.
+ */
 void ArrayDelete(ArrayList* list, int index)
 {
     if (list->count <= 0) {
@@ -76,16 +97,28 @@ void ArrayDelete(ArrayList* list, int index)
     list->count--;
 }
 
+/**
+ * @brief Delete a value from the first of the array list.
+ * @param list Pointer to the array list.
+ */
 void ArrayDeleteFirst(ArrayList* list)
 {
     ArrayDelete(list, 0);
 }
 
+/**
+ * @brief Delete a value from the last of the array list.
+ * @param list Pointer to the array list.
+ */
 void ArrayDeleteLast(ArrayList* list)
 {
     ArrayDelete(list, list->count - 1);
 }
 
+/**
+ * @brief Print the array list.
+ * @param list Pointer to the array list.
+ */
 void ArrayPrint(ArrayList* list)
 {
     if (list->count <= 0) {
@@ -98,6 +131,10 @@ void ArrayPrint(ArrayList* list)
     printf("\n");
 }
 
+/**
+ * @brief Free the array list.
+ * @param list Pointer to the array list.
+ */
 void ArrayFree(ArrayList* list)
 {
     free(list);
