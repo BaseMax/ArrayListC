@@ -11,5 +11,22 @@ typedef struct {
     int* data;
 } ArrayList;
 
-#endif
+ArrayList* ArrayCreate(int n);
 
+void ArrayAppendFirst(ArrayList* list, int value);
+
+void ArrayAppendLast(ArrayList* list, int value);
+
+void ArrayAppend(ArrayList* list, int value, int index);
+
+void ArrayDelete(ArrayList* list, int index);
+
+void ArrayDeleteFirst(ArrayList* list);
+
+void ArrayDeleteLast(ArrayList* list);
+
+void ArrayPrint(ArrayList* list);
+
+void ArrayFree(ArrayList* list);
+
+#endif
